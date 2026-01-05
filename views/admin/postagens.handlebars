@@ -1,0 +1,34 @@
+<section class="grid-section">
+  <h1 style="margin-bottom: 20px;">Minhas Postagens:</h1>
+  <hr />
+
+  <hr />
+
+  {{#each postagem}}
+    <a href="/admin/postagens/edit/{{_id}}"></a>
+    <article class="project" style="margin-top: 20px;">
+      <h1>{{titulo}}</h1>
+      <small>{{data}}</small>
+      <span>{{slug}}</span>
+      <p>{{descricao}}</p>
+      <p>{{nome}}</p>
+      <aside>
+
+        <form action="/admin/postagens/edit/{{_id}}" method="get">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button class="btn-success">Editar postagens</button>
+        </form>
+        <form action="/admin/postagens/deletar/" method="post">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button class="btn-danger">Apagar postagens</button>
+        </form>
+      </aside>
+    </article>
+  {{else}}
+    <span style="margin-top: 20px;">Nenhuma Postagens adicionada</span>
+  {{/each}}
+
+  <a href="/admin/postagens/add" style="display: block; margin: 20px 0px; ">
+    <button class="btn-success">Adicionar Nova</button>
+  </a>
+</section>

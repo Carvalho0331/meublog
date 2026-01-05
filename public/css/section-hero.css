@@ -1,0 +1,30 @@
+.hero-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: center;
+}
+
+.hero-description{
+    display: grid;
+    gap: 20px;
+    justify-content: start;
+}
+.hero-description h2{
+  margin: 0px;
+  text-align: start;
+}
+
+.hero-description button{
+    background: var(--brand-color);
+    color: var(--dark-10);
+    justify-self: start;
+}
+
+.hero-description span:first-child{
+   margin-bottom: 5px;
+}
+@media (max-width:800px) {
+    .hero-section{
+        grid-template-columns: 1fr;
+    }
+}

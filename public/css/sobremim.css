@@ -1,0 +1,31 @@
+.section-intro{
+    display: grid;
+    gap: 40px;
+}
+.section-intro h2{
+margin-bottom: 20px !important;
+}
+.section-intro p{
+    text-align: center;
+}
+
+.social-media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+justify-items: center;
+}
+
+.social-media aside{
+    display: grid;
+    justify-content: center;
+    justify-items:center ;
+    gap: 10px;
+}
+.social-media aside img{
+        background: var(--dark-20);
+    border: 1px solid var(--dark-30);
+    padding: 20px;
+    border-radius: 100%;
+}

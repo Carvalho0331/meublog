@@ -1,0 +1,26 @@
+
+<section class="grid-section">
+
+  <form class="form" action="/admin/postagens/nova" method="post">
+    <input type="hidden" name="id" value="{{_id}}" />
+    <h1>adicionar Postagem</h1>
+    <label for="titulo">titulo</label>
+    <input type="text" name="titulo" />
+    <label for="slug">slug</label>
+    <input type="text" name="slug" />
+    <label for="descricao">descricao</label>
+    <input type="text" name="descricao" />
+    <label for="conteudo">conteudo</label>
+    <textarea name="conteudo"></textarea>
+    <label for="categoria">Categorias</label>
+    <select name="categoria" id="" class="" required>
+      {{#each categoria}}
+        <option value="{{_id}}">{{nome}}</option>
+      {{else}}
+        {{! importante colocar 0 }}
+        {{!-- <option value="">Nenhuma categoria registadas</option> --}}
+      {{/each}}
+    </select>
+    <button>adicionar Postagem</button>
+  </form>
+</section>

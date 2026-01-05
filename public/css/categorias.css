@@ -1,0 +1,83 @@
+.form {
+  display: grid;
+  gap: 20px;
+  
+}
+
+input {
+  height: 40px;
+  border-radius: 10px;
+  outline: var(--brand-color);
+  padding: 10px 30px;
+  border: 2px solid var(--white);
+  background: var(--dark-10);
+  color: var(--white);
+  font-size: 20px;
+}
+
+label {
+  font-size: 24px;
+}
+
+.btn-success {
+  color: var(--dark-10) !important;
+  background: var(--brand-color) !important;
+}
+
+.btn-danger {
+  color: var(--white) !important;
+  background: #eb7f7f !important;
+  border: transparent !important;
+}
+
+.msg-success {
+  color: var(--dark-10);
+  background: var(--brand-color);
+  display: grid;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.msg-danger {
+  color: var(--white);
+  background: #eb7f7f;
+
+  display: grid;
+  padding: 20px;
+  border-radius: 10px;
+}
+button{
+    justify-self: center
+}
+
+textarea{
+    height: 200px;
+    border: 0px solid var(--brand-color);
+    border-radius: 6px;
+    font-size: 20px;
+    padding: 20px;
+}
+textarea:hover{
+    
+    outline: 5px solid var(--brand-color);
+    transition: all 500ms ease-in-out;
+}
+
+
+.post-title{
+  display: grid;
+  gap: 20px;
+}
+
+.post-title .conteudo{
+font-size: 18px;
+line-height: 1.4;
+}
+
+.titulo{
+  font-size: 32px;
+  color: var(--brand-color);
+}
+.data{
+  color: var(--brand-color);
+}

@@ -1,0 +1,45 @@
+
+
+.section-projects h2{
+    text-align: center;
+}
+.grid-projects{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 20px;
+    /* justify-content: start; */
+    justify-items: start;
+}
+
+.project{
+   display: grid;
+   gap: 20px;
+   width: 100%;
+   border: 1px solid var(--brand-color);
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.project span{
+  font-size: 14px;
+    color: var(--brand-color);
+    font-weight: 300;
+}
+.project aside{
+ display: flex;
+ gap: 20px;
+}
+div{
+    height: 130px;
+    background: var(--dark-30);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: var(--brand-color);
+}
+
+@media (max-width:800px) {
+    .grid-projects{
+        grid-template-columns: 1fr;
+    }
+}

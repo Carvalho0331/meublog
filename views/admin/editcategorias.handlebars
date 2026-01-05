@@ -1,0 +1,12 @@
+<section class="grid-section">
+
+  <form class="form" action="/admin/categorias/edit" method="post">
+<input type="hidden" name="id" value="{{categoria._id}}">
+    <h1>Editar Categorias</h1>
+      <label for="">nome</label>
+      <input type="text" name="nome" value="{{categoria.nome}}"/>
+      <label for="">slug</label>
+      <input type="text" name="slug" value="{{categoria.slug}}" />
+    <button>Editar Categoria</button>
+  </form>
+</section>

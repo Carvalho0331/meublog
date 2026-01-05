@@ -1,0 +1,31 @@
+<section class="grid-section">
+  <h1 style="margin-bottom: 20px;">Minhas Categorias:</h1>
+  <hr />
+
+  <hr />
+
+  {{#each categorias}}
+    <a href="/admin/categorias/edit/{{_id}}"></a>
+
+    <article class="project" style="margin-top: 20px;">
+      <h3>{{nome}}</h3>
+      <span>{{slug}}</span>
+      <aside>
+
+        <form action="/admin/categorias/edit/{{_id}}" method="get">
+          <button class="btn-success">Editar Categorias</button>
+        </form>
+        <form action="/admin/categorias/deletar/" method="post">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button class="btn-danger">Apagar Categorias</button>
+        </form>
+      </aside>
+    </article>
+  {{else}}
+    <span style="margin-top: 20px;">Nenhuma categoria adicionada</span>
+  {{/each}}
+
+  <a href="/admin/categorias/add" style="display: block; margin: 20px 0px; ">
+    <button class="btn-success">Adicionar Nova</button>
+  </a>
+</section>

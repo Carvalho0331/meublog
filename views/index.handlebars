@@ -1,0 +1,55 @@
+<section id="home" class="grid-section">
+    <div class="hero-section">
+        <div class="hero-description">
+            <span>Bem-vindo ao</span>
+            <h2>CodeBlog</h2>
+            <h3>Um espaço sobre tecnologia, desenvolvimento e inovação</h3>
+            <p>Compartilho conhecimentos, tutoriais e reflexões sobre o mundo da programação, design e tecnologia. Aqui
+                você encontra conteúdo para todos os níveis, do iniciante ao avançado.</p>
+
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Desenvolvimento de código">
+        </div>
+    </div>
+</section>
+
+
+
+{{#each postagem}}
+
+<section class="grid-section">
+
+    <article class="project">
+        <div>
+            <i class="fas fa-paint-brush" style="font-size: 48px;"></i>
+        </div>
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <aside>
+            <span>{{categoria.nome}}</span>
+        </aside>
+        <span>{{data}}</span>
+
+        <form action="/postagens/ler/{{_id}}" method="post">
+        <button class="btn-success">Ler mais</button>
+        </form>
+    </article>
+</section>
+{{else}}
+{{/each}}
+
+
+
+<section class="grid-section">
+<h1>Categorias</h1>
+<hr>
+{{#each categoria}}
+<a href="/categorias/postagens/{{slug}}">
+<span>{{slug}}</span>
+</a>
+<br>
+{{else}}
+{{/each}}
+</section>

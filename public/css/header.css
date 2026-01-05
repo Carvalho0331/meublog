@@ -1,0 +1,22 @@
+.headers-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+a{
+    color: var(--white);
+
+}
+img{
+    display: block;
+    max-width: 100%;
+}

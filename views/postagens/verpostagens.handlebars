@@ -1,0 +1,21 @@
+    <input type="hidden" name="slug" value="{{categoria.slug}}">
+{{#each postagem}}
+<section class="grid-section">
+
+    <article class="project">
+        <div>
+            <i class="fas fa-paint-brush" style="font-size: 48px;"></i>
+        </div>
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <aside>
+            <span>{{categoria.nome}}</span>
+        </aside>
+        <span>{{data}}</span>
+        <form action="/postagens/ler/{{_id}}" method="post">
+            <button class="btn-success">Ler mais</button>
+        </form>
+    </article>
+</section>
+{{else}}
+{{/each}}

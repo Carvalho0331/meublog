@@ -1,0 +1,25 @@
+.section-ability{
+
+}
+
+.section-ability section:last-child{
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    /* width: 100%; */
+}
+
+.section-ability section img{
+    background: var(--dark-20);
+    padding: 20px 40px;
+    border: 1px solid var(--dark-30);
+    width: 100%;
+    border-radius: 4px;
+}
+
+@media (max-width:800px) {
+    .section-ability section:last-child{
+    flex-wrap: wrap;
+}
+}
