@@ -1,15 +1,18 @@
 {
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "body-parser": "^2.2.1",
     "connect-flash": "^0.1.1",
     "express": "^5.2.1",
     "express-handlebars": "^8.0.4",
     "express-session": "^1.18.2",
+    "install": "^0.13.0",
     "mongoose": "^9.1.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "session": "^0.1.0"
   },
   "scripts": {
-  "start": "node app.js"
+    "start": "node app.js"
+  }
 }
-}
-

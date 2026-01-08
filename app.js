@@ -6,11 +6,16 @@ const session = require("express-session")
 const handlebars = require("express-handlebars")
 const app = express()
 const admin =  require("./routes/admin")
+const usuario =  require("./routes/usuario")
 const path = require("path")
 require("./models/postagens")
 const Postagens = mongoose.model("Postagens")
 require("./models/categorias")
 const Categorias = mongoose.model("Categorias")
+require("./models/usuario")
+const User = mongoose.model("usuario")
+const passport = require("passport")
+require("./config/auth")(passport)
 
 
 
@@ -23,10 +28,14 @@ app.use(session({
     saveUninitialized:true,
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use(flash())
 app.use((req,res,next)=>{
     res.locals.success_msg = req.flash("success_msg")
     res.locals.error_msg = req.flash("error_msg")
+    res.locals.error = req.flash("error")
     next()
 })
 
@@ -60,10 +69,10 @@ app.get("/", (req,res)=>{
 
 
 
-
 })
 
 app.use("/admin", admin)
+app.use("/usuario", usuario)
 
 
 
