@@ -5,6 +5,7 @@ require("../models/usuario")
 const Usuario = mongoose.model("usuario")
 const bycrypt = require("bcryptjs")
 const passport = require("passport")
+const router = require("./admin")
 
 
 
@@ -30,7 +31,7 @@ rounter.post("/registo/feito", (req, res) => {
             res.redirect("/usuario/registo")
         } else {
 
-            const usuarioNovo = new Usuario ({
+            const usuarioNovo = new Usuario({
                 username: req.body.username,
                 email: req.body.email,
                 password: req.body.password,
@@ -61,20 +62,26 @@ rounter.post("/registo/feito", (req, res) => {
 })
 
 
-rounter.get("/login", (req,res)=>{
+rounter.get("/login", (req, res) => {
+
     res.render("usuario/login")
 })
 
-rounter.post("/login", (req,res,next)=>{
+rounter.post("/login", (req, res, next) => {
 
 
-    passport.authenticate("local", {
+        passport.authenticate("local", {
             successRedirect:"/",
-            failureRedirect:"/usuario/login",
-            failureFlash:true
-        })(req,res,next)
+            failureRedirect: "/usuario/login",
+            failureFlash: true
+        })(req, res, next)
 })
 
-
+router.get("/registar", (req, res) => {
+    res.render("/usuario/registo")
+})
+router.get("/entrar", (req, res) => {
+    res.render("/usuario/login")
+})
 
 module.exports = rounter

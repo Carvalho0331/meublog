@@ -10,7 +10,6 @@ const Usuario = mongoose.model("usuario")
 module.exports = function(passport){
     passport.use(new localStrategy({usernameField:"email", passwordField:"password"}, (email,senha,done)=>{
         Usuario.findOne({email}).then((usuario)=>{
-            console.log(usuario.password)
             if(!usuario){
                 return done(null,false,{message:"essa conta nao existe"})
             }
@@ -21,7 +20,7 @@ module.exports = function(passport){
                   return done(null,false,{message:"senha incorrecta"})
                 }
             })
-        }).catch(()=>{})
+        })
     }))
 
 
@@ -35,6 +34,7 @@ passport.deserializeUser((id, done) => {
         .then(user => done(null, user))
         .catch(err => done(err))
 
+     
     
 })
 
